@@ -10,92 +10,17 @@
 
   
   <div id="game">
+    <h1>Guess what letter I'm thinking of!</h1>
+    <h1>Choose from: a, b, c, d, e, f</h1>
     <h1>You chose: <span id="user-guess"></span></h1>
     <h1>The computer chose: <span id="computer-guess"></span></h1>
     <h1><span id="outcome"></span></h1>
     <h1>Wins: <span id="w"></span></h1>
     <h1>Losses: <span id="l"></span></h1>
     <h1>Ties: <span id="t"></span></h1>
-    <h1>Invalids: <span id="i"></span></h1>
   </div>
 
-  <script type="text/javascript">
-
-    var choices = ["r", "p", "s"];
-    var user = document.getElementById("user-guess");
-    var random = document.getElementById("computer-guess");
-    var outcome = document.getElementById("outcome");
-    var win = document.getElementById("w");
-    var loss = document.getElementById("l");
-    var tie = document.getElementById("t");
-    var invalid = document.getElementById("i");
-    var wi = 0;
-    var lo = 0;
-    var ti = 0;
-    var inv = 0;
-
-    document.onkeyup = function(event) {
-      var userGuess = event.key;
-      var randomGuess = choices[Math.floor(Math.random() * choices.length)];
-      user.textContent = event.key;
-      random.textContent = randomGuess;
-
-      if (randomGuess === "r" && userGuess === "r"){
-        console.log("Tie!");
-        outcome.textContent = "Tie!";
-        tie.textContent = (ti=ti+1);
-      }
-      else if (randomGuess === "p" && userGuess === "r"){
-        console.log("Lose!");
-        outcome.textContent = "Lose!";
-        loss.textContent = (lo=lo+1);
-      }
-      else if (randomGuess === "s" && userGuess === "r"){
-        console.log("Win!");
-        outcome.textContent = "Win!";
-        win.textContent = (wi=wi+1);
-      }
-      else if (randomGuess === "r" && userGuess === "p"){
-        console.log("Win!");
-        outcome.textContent = "Win!";
-        win.textContent = (wi=wi+1);
-      }
-      else if (randomGuess === "p" && userGuess === "p"){
-        console.log("Tie!");
-        outcome.textContent = "Tie!";
-        tie.textContent = (ti=ti+1);
-      }
-      else if (randomGuess === "s" && userGuess === "p"){
-        console.log("Lose!");
-        outcome.textContent = "Lose!";
-        loss.textContent = (lo=lo+1);
-      }
-      else if (randomGuess === "r" && userGuess === "s"){
-        console.log("Lose!");
-        outcome.textContent = "Lose!";
-        loss.textContent = (lo=lo+1);
-      }
-      else if (randomGuess === "p" && userGuess === "s"){
-        console.log("Win!");
-        outcome.textContent = "Win!";
-        win.textContent = (wi=wi+1);
-      }
-      else if (randomGuess === "s" && userGuess === "s"){
-        console.log("Tie!");
-        outcome.textContent = "Tie!";
-        tie.textContent = (ti=ti+1);
-      }
-      else {
-        console.log("invalid");
-        outcome.textContent = "Invalid!";
-        invalid.textContent = (inv=inv+1);
-      } 
-      
-    }
-
-
-</script>
-
+  <script src="assets/javascript/game.js" type="text/javascript"></script>
 </body>
 
 </html>
